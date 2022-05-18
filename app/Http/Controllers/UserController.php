@@ -16,6 +16,12 @@ class UserController extends Controller
      */
     public function __invoke(Request $request)
     {
+        /** 
+         * Gets all the parameters, loops over them
+         * Checks if they are actual attributes of the model,
+         * Makes sure they have a value
+         * Builds the eloquent query and returns the data as a collection.
+         */
         $getParamenters = (array) $request->all();
         foreach ($getParamenters as $key => $value) {
             $checkKey = Schema::hasColumn('users', $key);

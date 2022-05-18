@@ -20,6 +20,8 @@ class UserFactory extends Factory
             'active' => rand(1, 0),
             'class' => $this->faker->word(),
             'address' => $this->faker->sentence(),
+            
+            //Generates id randomly between 1 -10 due to states have been seeded with corresponding IDs
             'state_id' => rand(1, 10),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),

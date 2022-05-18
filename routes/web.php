@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route to get user based on parameters to filter
+// eg: http://127.0.0.1:8000/users?active=1&state_id=6&age=62
 Route::get('/users', UserController::class)->name('index');
