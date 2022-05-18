@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -39,6 +44,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'active' => 'boolean',
         'email_verified_at' => 'datetime',
     ];
 }
